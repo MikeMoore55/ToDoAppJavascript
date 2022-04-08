@@ -41,7 +41,7 @@ h2{
     text-align: center;
 }
 
-.entertask{
+.displayModal{
     position: absolute;
     top: 34%;
     left: 30%;
@@ -87,22 +87,34 @@ h2{
     top: 40%;
     left: 10%;
     right: 10%;
+    margin-bottom: 5%;
 }
 
 .list{
     position: relative;
     top: 40%;
-    left: 5%;
-    right: 5%;
+    left: 0%;
+    right: 0%;
     background-color: grey;
     padding-top: 2%;
     padding-bottom: 2%;
 }
 
+.completedDIV{
+    position: relative;
+    margin-top: 5%;
+    top: 60%;
+    left: 0%;
+    right: 0%;
+    background-color: grey;
+    padding: 0% 4% 2% 0%;
+}
+
 li{
     list-style: none;
     margin-bottom: 2%;
-    margin-right: 2%;
+    margin-right: 10%;
+    margin-left: 0;
     background-color: white;
     padding: 1%;
 }
@@ -114,8 +126,6 @@ h4{
     text-align: center;
     text-decoration: underline;
 }
-
-
 
 .check{
     width: 1em;
@@ -133,12 +143,3 @@ h4{
     text-decoration: line-through;
 }
 
-.completedDIV{
-    position: relative;
-    margin-top: 5%;
-    top: 60%;
-    left: 12%;
-    right: 12%;
-    background-color: grey;
-    padding: 0% 4% 2% 0%;
-}

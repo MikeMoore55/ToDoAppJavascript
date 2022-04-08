@@ -16,10 +16,12 @@
             <h1>X-List</h1>
             <h2>Hello, user...</h2>
         </div>
-        <div class="entertask">
+        <!-- created a button which shows modal once clicked to crete a task -->
+        <div class="displayModal">
             <button class="modalBtn" onclick="displayModal()">create task</button>
         </div>
         <div>
+        <!-- modal with form for creating tasks -->
             <form id="modal" class="modal">
                 <p class="modalContent">Task:</p>
                 <input type="text" placeholder="Add new task...">
@@ -31,6 +33,7 @@
                 <button type="submit" id="done" class="cancel" onclick="hideModal()">Cancel</button>
             </form>
         </div>
+        <!-- container created to store the 2 list types, to do, and completed -->
         <div class="listsContainer">
             <div class="list">
                 <h4>To Do:</h4>
