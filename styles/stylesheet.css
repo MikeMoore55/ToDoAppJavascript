@@ -51,6 +51,7 @@ h2{
 
 .modalBtn{
     width: 100%;
+    font-size: 1.2em;
 }
 
 .modal{
@@ -143,3 +144,54 @@ h4{
     text-decoration: line-through;
 }
 
+@media(min-width: 490px){
+    body{
+        background-image: url(../media/night-city-med.jpg);
+    } 
+    h1{
+        font-size: 4em;
+    }
+    
+    h2{
+       font-size: 2em;    
+    }
+
+    .modalBtn{
+        width: 100%;
+        font-size: 1.5em;
+    }
+    .modalContent{
+       font-size: 1.2em;
+    }
+    
+    .input{
+        font-size: 1.2em;
+    }
+
+    .date{
+        font-size: 1.2em;
+    }
+
+    .time{
+        font-size: 1.2em;
+
+    }
+
+    .add{
+        margin: 4% 2% 2% 0%;
+        font-size: 1.2em;
+    }
+    
+    .cancel{
+        margin: 4% 2% 2% 2%;
+        font-size: 1.2em;
+    }
+    
+}
+
+@media(min-width: 800px){
+    body{
+        background-image: url(../media/night-city-lrg.jpg);
+    } 
+    
+}

@@ -24,13 +24,15 @@
         <!-- modal with form for creating tasks -->
             <form id="modal" class="modal">
                 <p class="modalContent">Task:</p>
-                <input type="text" placeholder="Add new task...">
+                <input type="text" placeholder="Add new task..." class="input">
                 <p id="taskMessage" class="taskMessage"></p>
                 <p class="modalContent">Due Date:</p>
                 <input type="date" id="mydate" class="date"/>
                 <input type="time" id="mytime" class="time"/>
-                <button type="submit" class="add">Add Task</button>
-                <button type="submit" id="done" class="cancel" onclick="hideModal()">Cancel</button>
+                <div>
+                    <button type="submit" class="add">Add Task</button>
+                    <button type="submit" id="done" class="cancel" onclick="hideModal()">Cancel</button>
+                </div>
             </form>
         </div>
         <!-- container created to store the 2 list types, to do, and completed -->
