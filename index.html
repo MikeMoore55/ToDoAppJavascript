@@ -16,12 +16,13 @@
     </section>
     <section id="toDoListPage" class="toDoListPage">
         <div>
-            <button>create task</button>
+            <button onclick="displayModal()">create task</button>
         </div>
         <div>
-            <form>
+            <form id="modal" class="modal">
                 <input type="text" placeholder="Add new task...">
-                <button type="submit">&plus;</button>
+                <p id="taskMessage" class="taskMessage"></p>
+                <button type="submit">add task</button>
             </form>
         </div>
         <div>
