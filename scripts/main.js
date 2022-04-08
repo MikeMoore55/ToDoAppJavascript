@@ -41,7 +41,7 @@ function loadTasks() {
 //add task to list
 function addTask() {
     const task = document.querySelector("form input");
-    const list = document.querySelector("ul");
+    const list = document.querySelector("#myUl");
     // return if task is empty
     if (task.value === "") {
       document.getElementById("taskMessage").innerHTML ="Please add a task so we can add it to you list!"
@@ -75,6 +75,7 @@ function taskComplete(event) {
       if (task.task === event.nextElementSibling.value) {
         task.completed = !task.completed;
       }
+
     });
     localStorage.setItem("tasks", JSON.stringify(tasks));
     event.nextElementSibling.classList.toggle("completed");

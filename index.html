@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>X-List</title>
+    <link rel="icon" href="/media/iconmonstr-text-24-240.png">
 </head>
 <body>
     <section id="landingPage" class="landingPage">
@@ -20,21 +21,29 @@
         </div>
         <div>
             <form id="modal" class="modal">
+                <p class="modalContent">Task:</p>
                 <input type="text" placeholder="Add new task...">
                 <p id="taskMessage" class="taskMessage"></p>
-                <button type="submit">add task</button>
-                <button type="submit" id="done" onclick="hideModal()">done</button>
+                <p class="modalContent">Due Date:</p>
+                <input type="date" id="mydate" class="date"/>
+                <input type="time" id="mytime" class="time"/>
+                <button type="submit" class="add">Add Task</button>
+                <button type="submit" id="done" class="cancel" onclick="hideModal()">Cancel</button>
             </form>
         </div>
-        <div class="list">
-            <h4>to do:</h4>
-            <ul>    
-                <li>
-                  <input type="checkbox" onclick="taskComplete(this)" class="check">
-                  <input type="text" value="My Task" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-                  <i class="fa fa-trash" onclick="removeTask(this)"></i>
-                </li>
-            </ul>
+        <div class="listsContainer">
+            <div class="list">
+                <h4>To Do:</h4>
+                <ul id="myUl">    
+                
+                </ul>
+            </div>
+            <div id="completed" class="completedDIV">
+                <h4>Completed:</h4>
+                <ul id="Ul">
+
+                </ul>
+            </div>
         </div>
     </section>
 </body>
