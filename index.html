@@ -6,27 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="/scripts/main.js" defer></script>
     <link rel="stylesheet" href="/styles/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>X-List</title>
 </head>
 <body>
     <section id="landingPage" class="landingPage">
-        <h1>X-List</h1>
-        <h2>hello, user...</h2>
-        <button>go to My list</button>
-    </section>
-    <section id="toDoListPage" class="toDoListPage">
-        <div>
-            <button onclick="displayModal()">create task</button>
+        <div class="intro">
+            <h1>X-List</h1>
+            <h2>Hello, user...</h2>
+        </div>
+        <div class="entertask">
+            <button class="modalBtn" onclick="displayModal()">create task</button>
         </div>
         <div>
             <form id="modal" class="modal">
                 <input type="text" placeholder="Add new task...">
                 <p id="taskMessage" class="taskMessage"></p>
                 <button type="submit">add task</button>
+                <button type="submit" id="done" onclick="hideModal()">done</button>
             </form>
         </div>
-        <div>
-            <ul>
+        <div class="list">
+            <h4>to do:</h4>
+            <ul>    
                 <li>
                   <input type="checkbox" onclick="taskComplete(this)" class="check">
                   <input type="text" value="My Task" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
