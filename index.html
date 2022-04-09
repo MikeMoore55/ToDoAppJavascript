@@ -18,7 +18,7 @@
         </div>
         <!-- created a button which shows modal once clicked to crete a task -->
         <div class="displayModal">
-            <button class="modalBtn" onclick="displayModal()">create task</button>
+            <button class="modalBtn" onclick="displayModal()">Create Task</button>
         </div>
         <div>
         <!-- modal with form for creating tasks -->
@@ -27,10 +27,10 @@
                 <input type="text" placeholder="Add new task..." class="input">
                 <p id="taskMessage" class="taskMessage"></p>
                 <p class="modalContent">Due Date:</p>
-                <input type="date" id="mydate" class="date"/>
-                <input type="time" id="mytime" class="time"/>
+                <input type="date" id="mydate" class="duedate"/>
+                <input type="time" id="mytime" class="duedate"/>
                 <div>
-                    <button type="submit" class="add">Add Task</button>
+                    <button type="submit" class="add" onclick="addTask()">Add Task</button>
                     <button type="submit" id="done" class="cancel" onclick="hideModal()">Cancel</button>
                 </div>
             </form>
@@ -39,7 +39,9 @@
         <div class="listsContainer">
             <div class="list">
                 <h4>To Do:</h4>
-                <ul id="myUl">    
+                <p id="taskMessage2" class="taskMessage"></p>
+                <ul id="myUl">
+                       
                 
                 </ul>
             </div>

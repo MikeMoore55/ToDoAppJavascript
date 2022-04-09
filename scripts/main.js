@@ -17,6 +17,7 @@ function displayModal(){
 function hideModal(){
     const modal = document.querySelector("#modal")
     modal.style.display = "none"
+    document.getElementById("taskMessage").innerHTML = ""
 }
 
 function loadTasks() {
@@ -44,13 +45,13 @@ function addTask() {
     const list = document.querySelector("#myUl");
     // return if task is empty
     if (task.value === "") {
-      document.getElementById("taskMessage").innerHTML ="Please add a task so we can add it to you list!"
+      document.getElementById("taskMessage").innerHTML ="Please add a task!"
         /* or do this... alert("This is a to do list, so please add some task!"); */
       return false;
     }
     // check is task already exist
     if (document.querySelector(`input[value="${task.value}"]`)) {
-      alert("Task already exist!");
+      document.getElementById("taskMessage").innerHTML = "This task exists!"
       return false;
     }
 
@@ -106,16 +107,23 @@ function editTask(event) {
     let tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
     // check if task is empty
     if (event.value === "") {
-      alert("Task is empty!");
+      document.getElementById("taskMessage2").innerHTML = "The task is empty"
       event.value = currentTask;
       return;
+    }
+    else
+    {
+      document.getElementById("taskMessage2").innerHTML = ""
     }
     // task already exist
     tasks.forEach(task => {
       if (task.task === event.value) {
-        alert("Task already exist!");
+      document.getElementById("taskMessage2").innerHTML = "The task already exist!";
         event.value = currentTask;
         return;
+      }
+      else{
+      document.getElementById("taskMessage2").innerHTML = "";
       }
     });
     // update task
