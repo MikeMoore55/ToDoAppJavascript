@@ -14,6 +14,7 @@ function displayModal(){
     modal.style.display = "block"
 }
 
+//hide modal when "cancel" is clicked
 function hideModal(){
     const modal = document.querySelector("#modal")
     modal.style.display = "none"
@@ -34,7 +35,7 @@ function loadTasks() {
       const li = document.createElement("li");
       li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
         <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-        <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+        <button class="delBtnContainer" onclick="removeTask(this)"> <img src="/media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtn" > </button>`;
       list.insertBefore(li, list.children[0]);
     });
 }
@@ -46,13 +47,15 @@ function addTask() {
     // return if task is empty
     if (task.value === "") {
       document.getElementById("taskMessage").innerHTML ="Please add a task!"
-        /* or do this... alert("This is a to do list, so please add some task!"); */
       return false;
     }
     // check is task already exist
     if (document.querySelector(`input[value="${task.value}"]`)) {
       document.getElementById("taskMessage").innerHTML = "This task exists!"
       return false;
+    }
+    else{
+      document.getElementById("taskMessage").innerHTML = ""
     }
 
     // add task to local storage
@@ -62,7 +65,7 @@ function addTask() {
     const li = document.createElement("li");
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
     <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-    <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+    <button class="delBtnContainer" onclick="removeTask(this)"> <img src="/media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtn" > </button>`;
     list.insertBefore(li, list.children[0]);
     document.getElementById("taskMessage").innerHTML =""
     // clears input field

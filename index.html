@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <title>X-List</title>
-    <link rel="icon" href="/media/iconmonstr-text-24-240.png">
+    <link rel="icon" href="/media/iconmonstr-x-mark-3-240.png">
 </head>
 <body>
     <section id="landingPage" class="landingPage">
@@ -24,7 +24,7 @@
         <!-- modal with form for creating tasks -->
             <form id="modal" class="modal">
                 <p class="modalContent">Task:</p>
-                <input type="text" placeholder="Add new task..." class="input">
+                <input type="text" class="input">
                 <p id="taskMessage" class="taskMessage"></p>
                 <p class="modalContent">Due Date:</p>
                 <input type="date" id="mydate" class="duedate"/>
@@ -38,15 +38,15 @@
         <!-- container created to store the 2 list types, to do, and completed -->
         <div class="listsContainer">
             <div class="list">
-                <h4>To Do:</h4>
+                <h3>To Do:</h3>
                 <p id="taskMessage2" class="taskMessage"></p>
                 <ul id="myUl">
                        
-                
+
                 </ul>
             </div>
             <div id="completed" class="completedDIV">
-                <h4>Completed:</h4>
+                <h3>Completed:</h3>
                 <ul id="Ul">
 
                 </ul>
