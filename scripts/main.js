@@ -66,7 +66,10 @@ function addTask() {
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
     <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
     <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtn" > </button>`;
-    list.insertBefore(li, list.children[0]);
+    /* or this could work
+     list.insertBefore(li, list.children[0]); 
+     */
+    list.appendChild(li)
     document.getElementById("taskMessage").innerHTML =""
     // clears input field
     task.value = "";
