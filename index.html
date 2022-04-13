@@ -11,12 +11,14 @@
     <link rel="icon" href=".//media/iconmonstr-x-mark-3-240.png">
 </head>
 <body>
-    <header id="header" class="header">        
-        <h1>X-List</h1>
-        <h2>Hello, user...</h2>    
-    </header>
+    <main id="main" class="main"> 
+    
+        <header id="header" class="header">        
+            <h1>X-List</h1>
+            <h2>Hello, user...</h2>    
+        </header>
    
-    <main id="main" class="main">    
+       
          <!-- created a button which shows modal once clicked to crete a task -->
         <div class="modalBtnDiv">
             <button id="modalBtn" class="modalBtn">Create Task</button>
@@ -25,6 +27,7 @@
         <div id="modalDiv" class="modalDiv">
         <!-- modal with form for creating tasks -->
             <form id="modal" class="modal">
+                <button type="submit" id="cancelBtn" class="cancelBtn">X</button>
                 <p id="taskHeading" class="modalheadings">Task:</p>
                 <input type="text" id="taskInput" class="taskInput">
                 <p id="formMessage" class="formMessage"></p>
@@ -33,7 +36,7 @@
                 <input type="time" id="time" class="duedate"/>
                 <div id="btnDiv" class="btnDiv">
                     <button type="submit" id="addBtn" class="addBtn">Add Task</button>
-                    <button type="submit" id="cancelBtn" class="cancelBtn">Cancel</button>
+                    
                 </div>
             </form>
         </div>
