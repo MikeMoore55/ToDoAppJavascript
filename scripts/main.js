@@ -34,16 +34,7 @@ const hideModal = () => {
 MODAL_BTN.addEventListener('click', displayModal)
 CANCEL_BTN.addEventListener('click', hideModal)
 
-/* function displayModal(){
-    const modal = document.querySelector("#modal")
-    modal.style.display = "block"
-} 
 
-function hideModal(){
-    const modal = document.querySelector("#modal")
-    modal.style.display = "none"
-    document.getElementById("taskMessage").innerHTML = ""
-} */
 
 /* ------ Functionality ------ */
 
@@ -66,7 +57,7 @@ function loadTasks() {
       const li = document.createElement("li");
       li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
         <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-        <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtn" > </button>`;
+        <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
       list.insertBefore(li, list.children[0]);
   });
 }
@@ -99,7 +90,7 @@ function addTask() {
     const li = document.createElement("li");
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
     <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-    <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtn" > </button>`;
+    <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
     list.appendChild(li)
     document.getElementById("formMessage").innerHTML =""
     
