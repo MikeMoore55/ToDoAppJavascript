@@ -11,47 +11,48 @@
     <link rel="icon" href=".//media/iconmonstr-x-mark-3-240.png">
 </head>
 <body>
-    <section id="landingPage" class="landingPage">
-        <div class="intro">
-            <h1>X-List</h1>
-            <h2>Hello, user...</h2>
+    <header id="header" class="header">        
+        <h1>X-List</h1>
+        <h2>Hello, user...</h2>    
+    </header>
+   
+    <main id="main" class="main">    
+         <!-- created a button which shows modal once clicked to crete a task -->
+        <div class="modalBtnDiv">
+            <button id="modalBtn" class="modalBtn">Create Task</button>
         </div>
-        <!-- created a button which shows modal once clicked to crete a task -->
-        <div class="displayModal">
-            <button class="modalBtn" onclick="displayModal()">Create Task</button>
-        </div>
-        <div>
+
+        <div id="modalDiv" class="modalDiv">
         <!-- modal with form for creating tasks -->
             <form id="modal" class="modal">
-                <p class="modalContent">Task:</p>
-                <input type="text" class="input">
-                <p id="taskMessage" class="taskMessage"></p>
-                <p class="modalContent">Due Date:</p>
-                <input type="date" id="mydate" class="duedate"/>
-                <input type="time" id="mytime" class="duedate"/>
-                <div>
-                    <button type="submit" class="add" onclick="addTask()">Add Task</button>
-                    <button type="submit" id="done" class="cancel" onclick="hideModal()">Cancel</button>
+                <p id="taskHeading" class="modalheadings">Task:</p>
+                <input type="text" id="taskInput" class="taskInput">
+                <p id="formMessage" class="formMessage"></p>
+                <p id="dateHeading" class="modalheadings">Due Date:</p>
+                <input type="date" id="date" class="duedate"/>
+                <input type="time" id="time" class="duedate"/>
+                <div id="btnDiv" class="btnDiv">
+                    <button type="submit" id="addBtn" class="addBtn">Add Task</button>
+                    <button type="submit" id="cancelBtn" class="cancelBtn">Cancel</button>
                 </div>
             </form>
         </div>
         <!-- container created to store the 2 list types, to do, and completed -->
-        <div class="listsContainer">
-            <div class="list">
+        <div id="listsContainer" class="listsContainer">
+            <div class="toDoListDiv">
                 <h3>To Do:</h3>
-                <p id="taskMessage2" class="taskMessage"></p>
-                <ul id="myUl">
+                <p id="errorMessage" class="errorMessage"></p>
+                <ul id="toDoList" class="toDoList">
                        
-
                 </ul>
             </div>
-            <div id="completed" class="completedDIV">
+            <div id="completedDiv" class="completedDiv">
                 <h3>Completed:</h3>
-                <ul id="Ul">
+                <ul id="completedList" class="completedList">
 
                 </ul>
             </div>
         </div>
-    </section>
+    </main>
 </body>
 </html>
