@@ -49,7 +49,6 @@ function loadTasks() {
       const li = document.createElement("li");
       li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
         <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <button class="editBtnContainer" onclick="editTask(event)">edit</button>
         <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
       list.insertBefore(li, list.children[0]);
   });
@@ -58,7 +57,7 @@ function loadTasks() {
 // ----- add tasks ----- //
 
 function addTask() {
-    const task = document.querySelector("#taskInput");
+    const task = document.querySelector("form input");
     const list = document.querySelector("#toDoList");
     
     // return if task is empty
@@ -84,8 +83,7 @@ function addTask() {
     const li = document.createElement("li");
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
     <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-    <button id="edit" class="editBtnContainer" onclick="editTask(event)" >edit</button>
-    <button class="delBtnContainer" onclick="removeTask(this)"><img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
+    <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
     list.appendChild(li)
     document.getElementById("formMessage").innerHTML =""
     
@@ -128,19 +126,7 @@ function getCurrentTask(event) {
 }
 
 // ----- edit tasks ----- //
-
-function editTask(event){
-  event.preventDefault()
-  displayModal()
-  document.querySelector("#edit").addEventListener("click", displayModal)
-  addTask()
-  removeTask(event)
-  document.querySelector("#edit").addEventListener("click", removeTask(this))
-}
-
-
-
-/* function editTask(event) {    
+function editTask(event) {    
     // check if task is empty
     if (event.value === "") {
       document.getElementById("errorMessage").innerHTML = "The task is empty"
@@ -177,4 +163,4 @@ function editTask(event){
 
     // update local storage
     localStorage.setItem("tasks", JSON.stringify(TASKS));
-} */
+}

@@ -84,7 +84,7 @@ function addTask() {
     const li = document.createElement("li");
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
     <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-    <button id="edit" class="editBtnContainer" onclick="editTask(event)" >edit</button>
+    <button id="edit" class="editBtnContainer" onclick="editTask(event)">edit</button>
     <button class="delBtnContainer" onclick="removeTask(this)"><img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
     list.appendChild(li)
     document.getElementById("formMessage").innerHTML =""
@@ -130,12 +130,10 @@ function getCurrentTask(event) {
 // ----- edit tasks ----- //
 
 function editTask(event){
-  event.preventDefault()
   displayModal()
   document.querySelector("#edit").addEventListener("click", displayModal)
   addTask()
   removeTask(event)
-  document.querySelector("#edit").addEventListener("click", removeTask(this))
 }
 
 

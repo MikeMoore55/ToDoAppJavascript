@@ -130,11 +130,7 @@ function getCurrentTask(event) {
 // ----- edit tasks ----- //
 
 function editTask(event){
-  event.preventDefault()
-  displayModal()
   document.querySelector("#edit").addEventListener("click", displayModal)
-  addTask()
-  removeTask(event)
   document.querySelector("#edit").addEventListener("click", removeTask(this))
 }
 
