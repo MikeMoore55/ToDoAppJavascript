@@ -187,6 +187,14 @@ li{
 
 @media(min-width: 490px){
     body{
+        background-image: url(../media/galaxy-img-med.jpg);
+        background-position: center;
+    }
+}
 
+@media(min-width: 900px){
+    body{
+        background-image: url(../media/galaxy-img-med.jpg);
+        background-position: center;
     }
 }
