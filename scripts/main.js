@@ -48,9 +48,9 @@ function loadTasks() {
       const list = document.querySelector("#toDoList");
       const li = document.createElement("li");
       li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-        <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+      <p class="task">${task.task}</p>
       <button class="editBtnContainer" onclick="editTask(event)">edit</button>
-        <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
+      <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
       list.insertBefore(li, list.children[0]);
   });
 }
@@ -83,7 +83,7 @@ function addTask() {
     // create list item, add innerHTML and append to ul
     const li = document.createElement("li");
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
-    <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+    <p class="task">${task.value}</p>
     <button id="edit" class="editBtnContainer" onclick="editTask(event)" >edit</button>
     <button class="delBtnContainer" onclick="removeTask(this)"><img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
     list.appendChild(li)
@@ -120,24 +120,33 @@ function removeTask(event) {
 }
 
 // store current task to track changes
-let currentTask = null;
+/* let currentTask = null;
 
 // get current task
 function getCurrentTask(event) {
     currentTask = event.value;
 }
-
+ */
 // ----- edit tasks ----- //
 
-function editTask(event){
-  event.preventDefault()
-  displayModal()
-  document.querySelector("#edit").addEventListener("click", displayModal)
-  addTask()
-  removeTask(event)
-  document.querySelector("#edit").addEventListener("click", removeTask(this))
-}
+/* function editTask(event){
 
+// recall functions needed
+  addTask()
+  removeTask()
+  displayModal()
+  hideModal()
+
+  const addNewTask = () => {
+     document.querySelector("#edit").addEventListener('click', displayModal)
+  }
+
+  const deleteOldTask = () => {
+    document.querySelector("#edit").addEventListener('click', removeTask(event))
+  }
+ 
+}
+ */
 
 
 /* function editTask(event) {    

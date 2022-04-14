@@ -20,14 +20,13 @@
                 <input type="text" id="taskInput" class="taskInput">
                 <p id="formMessage" class="formMessage"></p>
                 <p id="dateHeading" class="modalheadings">Due Date:</p>
-                <input type="date" id="date" class="duedate"/>
-                <input type="time" id="time" class="duedate"/>
+                <input type="datetime-local" id="dueDate" class="dueDate"/>
                 <div id="btnDiv" class="btnDiv">
                     <button type="submit" id="addBtn" class="addBtn">Add Task</button>
                     
                 </div>
             </form>
-        </div>
+    </div>
 
     <main id="main" class="main"> 
     
@@ -60,5 +59,21 @@
             </div>
         </div>
     </main>
+    <!-- <div id="editModalDiv" class="modalDiv">
+        
+            <form id="editModal" class="modal">
+                <button type="submit" id="editCancelBtn" class="cancelBtn">X</button>
+                <p id="editHeading" class="modalheadings">Task:</p>
+                <input type="text" id=" editInput" class="taskInput">
+                <p id="editformMessage" class="formMessage"></p>
+                <p id="editDateHeading" class="modalheadings">Due Date:</p>
+                <input type="datetime-local" id="editDueDate" class="editDueDate"/>
+                <div id="btnDiv" class="btnDiv">
+                    <button type="submit" id="saveBtn" class="saveBtn">
+                        Save Task
+                    </button>
+                </div>
+            </form> -->
+    </div>
 </body>
 </html>
