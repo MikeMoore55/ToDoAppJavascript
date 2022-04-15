@@ -89,6 +89,28 @@ function addTask() {
     task.value = "";
 }
 
+document.querySelector("#addBtn").addEventListener("click", addTask)
+
+
+const taskAddedModal = document.querySelector("#taskAddMessage")
+
+const displayTaskAddedModal = () => {
+  taskAddedModal.style.display = "block"
+}
+
+const hideTaskAddedModal = () => {
+  taskAddedModal.style.display = "none"
+}
+
+
+document.querySelector("#addBtn").addEventListener("click", displayTaskAddedModal)
+
+document.querySelector("#taskAddMessage").addEventListener("click", hideTaskAddedModal)
+
+
+
+
+
 /* ----- checks off completed tasks when check box is clicked ----- */
 function taskComplete(event) {
   TASKS.forEach(task => {

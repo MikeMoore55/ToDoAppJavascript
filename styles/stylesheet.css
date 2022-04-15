@@ -96,6 +96,28 @@ body{
 }
 
 /* everything seen on the app */
+.helpMessage{
+    display: none;
+    position: fixed;
+    z-index: 3;
+    bottom: 1%;
+    left: 2%;
+    right: 38%;
+    background-color: black;
+    border:#636496 5px solid;
+    width: 60%;
+    height: 10%;
+    padding: 1% 1% 1% 1%;
+    border-radius: 10%;
+}
+
+.taskAddedMessage{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #636496;
+}
+
 .header{
     background-color: black;
     position: absolute;
@@ -151,7 +173,7 @@ body{
 }
 
 .toDoListDiv{
-    position: relative;
+    position: absolute;
     z-index: 0;
     left: 0%;
     right: 2%;
@@ -329,6 +351,12 @@ li{
         width: 10%;
         height: 10%;
         left: 80%;
+    }
+
+    .toDoListDiv{
+        width: 95%;
+        right: 5%;
+        left: 0;
     }
 
 }
