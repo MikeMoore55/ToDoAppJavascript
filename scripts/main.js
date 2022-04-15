@@ -1,20 +1,15 @@
-/*
- ____the naming conventions used____
-    -camelCase = for normal variable and function declaration
-    -SCREAMING_SNAKE_CASE = for global variable and function declaration
- */
 
 //when page loads, get all tasks remaining from local storage
 window.onload = loadTasks;
 
-//prevent the task input form from "freaking out"
+//prevent the task input form from "bugging"
 document.querySelector("form").addEventListener("submit", e => {
 e.preventDefault();
 addTask();
 });
 
-
-// ----- modal ----- //
+//display form when "create task" button is clicked
+/* ----- make modal appear and disappear ----- */
 
 const MODAL = document.querySelector("#modal")
 const MODAL_BTN = document.querySelector("#modalBtn")
@@ -32,10 +27,10 @@ MODAL_BTN.addEventListener('click', displayModal)
 CANCEL_BTN.addEventListener('click', hideModal)
 
 
-// Get the tasks from localStorage and convert it to an array
+/* ----- Get the tasks from localStorage ----- */
 const TASKS = Array.from(JSON.parse(localStorage.getItem("tasks")));
 
-// ----- load tasks ----- //
+/* ----- load tasks from local storage ----- */
 
 function loadTasks() {
     // check if localStorage has any tasks
@@ -47,18 +42,18 @@ function loadTasks() {
     TASKS.forEach(task => {
       const list = document.querySelector("#toDoList");
       const li = document.createElement("li");
-      li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
-      <p class="task">${task.task}</p>
-      <button class="editBtnContainer" onclick="editTask(event)">edit</button>
-      <button class="delBtnContainer" onclick="removeTask(this)"> <img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
-      list.insertBefore(li, list.children[0]);
+      li.innerHTML = 
+      ` <input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
+        <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+        <i id="delBtn" class="fa fa-times" aria-hidden="true" onclick="removeTask(this)"></i>`
+        list.insertBefore(li, list.children[0]);
   });
 }
 
-// ----- add tasks ----- //
+/* ----- add taskInput to list ----- */
 
 function addTask() {
-    const task = document.querySelector("#taskInput");
+    const task = document.querySelector("form input");
     const list = document.querySelector("#toDoList");
     
     // return if task is empty
@@ -82,10 +77,11 @@ function addTask() {
 
     // create list item, add innerHTML and append to ul
     const li = document.createElement("li");
-    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check">
-    <p class="task">${task.value}</p>
-    <button id="edit" class="editBtnContainer" onclick="editTask(event)" >edit</button>
-    <button class="delBtnContainer" onclick="removeTask(this)"><img src=".//media/iconmonstr-x-mark-7-240.png" alt="delete img" class="delBtnImg" > </button>`;
+    li.innerHTML = 
+    ` <input type="checkbox" onclick="taskComplete(this)" class="check">
+      <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+      <i id="delBtn" class="fa fa-times" aria-hidden="true" onclick="removeTask(this)"></i>
+    `
     list.appendChild(li)
     document.getElementById("formMessage").innerHTML =""
     
@@ -93,9 +89,7 @@ function addTask() {
     task.value = "";
 }
 
-
-// ----- complete tasks ----- //
-
+/* ----- checks off completed tasks when check box is clicked ----- */
 function taskComplete(event) {
   TASKS.forEach(task => {
       if (task.task === event.nextElementSibling.value) {
@@ -104,10 +98,15 @@ function taskComplete(event) {
     });
     localStorage.setItem("tasks", JSON.stringify(TASKS));
     event.nextElementSibling.classList.toggle("completed");
+
+    const containsClass = nextElementSibling.classList.contains("completed")
+    if (containsClass){
+      document.querySelector("#completedList").appendChild(li)
+    }
 }
 
 
-// ----- remove tasks ----- //
+/* ----- removes task from list and local storage when x is clicked ----- */
 function removeTask(event) {
   TASKS.forEach(task => {
       if (task.task === event.parentNode.children[1].value) {
@@ -120,36 +119,15 @@ function removeTask(event) {
 }
 
 // store current task to track changes
-/* let currentTask = null;
+let currentTask = null;
 
 // get current task
 function getCurrentTask(event) {
     currentTask = event.value;
 }
- */
-// ----- edit tasks ----- //
 
-/* function editTask(event){
-
-// recall functions needed
-  addTask()
-  removeTask()
-  displayModal()
-  hideModal()
-
-  const addNewTask = () => {
-     document.querySelector("#edit").addEventListener('click', displayModal)
-  }
-
-  const deleteOldTask = () => {
-    document.querySelector("#edit").addEventListener('click', removeTask(event))
-  }
- 
-}
- */
-
-
-/* function editTask(event) {    
+/* ----- edit the task and update local storage ----- */
+function editTask(event) {    
     // check if task is empty
     if (event.value === "") {
       document.getElementById("errorMessage").innerHTML = "The task is empty"
@@ -176,7 +154,7 @@ function getCurrentTask(event) {
 
     });
     
-    // ----- update task ----- //
+    // update task
     TASKS.forEach(task => {
       if (task.task === currentTask) {
         task.task = event.value;
@@ -186,4 +164,13 @@ function getCurrentTask(event) {
 
     // update local storage
     localStorage.setItem("tasks", JSON.stringify(TASKS));
-} */
+}
+
+
+/*
+ ----- the naming conventions used -----
+
+    -camelCase = for normal variable and function declaration
+    -SCREAMING_SNAKE_CASE = for global variable and function declaration
+
+*/
