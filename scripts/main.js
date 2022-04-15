@@ -80,7 +80,7 @@ function addTask() {
     li.innerHTML = 
     ` <input type="checkbox" onclick="taskComplete(this)" class="check">
       <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-      <i id="delBtn" class="fa fa-times" aria-hidden="true" onclick="removeTask(this)"></i>
+      <i id="delBtn" class="fa fa-times delBtn" aria-hidden="true" onclick="removeTask(this)"></i>
     `
     list.appendChild(li)
     document.getElementById("formMessage").innerHTML =""

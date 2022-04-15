@@ -8,7 +8,6 @@
     <title>X-List</title>
     <link rel="stylesheet" href="styles/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="icon" href=".//media/iconmonstr-x-mark-3-240.png">
 </head>
 <body>
@@ -19,10 +18,10 @@
         <form id="modal" class="modal">
             <button type="submit" id="cancelBtn" class="cancelBtn">X</button>
             <h4 id="taskHeading" class="modalheadings">Task:</h3>
-            <input type="text" id="taskInput" class="taskInput"/>
+            <input type="text" id="taskInput" class="taskInput" placeholder="Add a task..."/>
             <p id="formMessage" class="formMessage"></p>
-            <p id="dateHeading" class="modalheadings">Due Date:</p>
-            <input type="datetime-local" id="dueDate" class="dueDate"/>
+            <p id="dateHeading" class="modalheadings">Due-Date:</p>
+            <input type="datetime-local" id="dueDate" class="dueDateTime"/>
             <div id="btnDiv" class="btnDiv">
                 <button type="submit" id="addBtn" class="addBtn">Add Task</button>
             </div>
@@ -32,17 +31,14 @@
 <main id="main" class="main"> 
     <div class="helpHeader">
     <header id="header" class="header">        
-        <h1 id="appName" class="appName">X-List</h1>
+        <h1 id="appName" class="appName">
+        X-List
+        </h1>
         <h2 id="message" class="message">Your tasks...</h2>    
     </header>
    </div>
    
     <section class="appBody">
-        <!-- created a button which shows modal once clicked to crete a task -->
-        <div class="modalBtnDiv">
-            <button id="modalBtn" class="modalBtn">Create Task</button>
-        </div>
-    
         <!-- container created to store the 2 list types, to do, and completed -->
         <div id="toDoListDiv" class="toDoListDiv">
             <h3 id="listName" class="listName">To Do:</h3>
@@ -50,7 +46,11 @@
             <ul id="toDoList" class="toDoList">
                         
             </ul>
-            </div>
+    
+        </div>
+        <!-- created a button which shows modal once clicked to crete a task -->
+    
+       
             <!--  --NEED TO FIX JS TO MAKE COMPLETED TASK MOVE HERE --  
                 
                 <div id="completedDiv" class="completedDiv">
@@ -62,6 +62,11 @@
 
             -->
     </section>
+    <div class="modalBtnDiv">
+        <button id="modalBtn" class="modalBtn">
+            +
+        </button>
+    </div>
 </main>
     
 </body>
