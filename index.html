@@ -12,68 +12,56 @@
     <link rel="icon" href=".//media/iconmonstr-x-mark-3-240.png">
 </head>
 <body>
-    
-     <div id="modalDiv" class="modalDiv">
-        <!-- modal with form for creating tasks -->
-            <form id="modal" class="modal">
-                <button type="submit" id="cancelBtn" class="cancelBtn">X</button>
-                <p id="taskHeading" class="modalheadings">Task:</p>
-                <input type="text" id="taskInput" class="taskInput">
-                <p id="formMessage" class="formMessage"></p>
-                <p id="dateHeading" class="modalheadings">Due Date:</p>
-                <input type="datetime-local" id="dueDate" class="dueDate"/>
-                <div id="btnDiv" class="btnDiv">
-                    <button type="submit" id="addBtn" class="addBtn">Add Task</button>
-                </div>
-            </form>
+    <!-- used camelCase naming convention  -->
+
+    <div id="modalDiv" class="modalDiv">
+            <!-- modal with form for creating tasks -->
+        <form id="modal" class="modal">
+            <button type="submit" id="cancelBtn" class="cancelBtn">X</button>
+            <h4 id="taskHeading" class="modalheadings">Task:</h3>
+            <input type="text" id="taskInput" class="taskInput"/>
+            <p id="formMessage" class="formMessage"></p>
+            <p id="dateHeading" class="modalheadings">Due Date:</p>
+            <input type="datetime-local" id="dueDate" class="dueDate"/>
+            <div id="btnDiv" class="btnDiv">
+                <button type="submit" id="addBtn" class="addBtn">Add Task</button>
+            </div>
+        </form>
     </div>
 
-    <main id="main" class="main"> 
-    
-        <header id="header" class="header">        
-            <h1>X-List</h1>
-            <h2>Hello, user...</h2>    
-        </header>
-   
-       
-         <!-- created a button which shows modal once clicked to crete a task -->
+<main id="main" class="main"> 
+    <div class="headerTriangle">
+    <header id="header" class="header">        
+        <h1 id="appName" class="appName">X-List</h1>
+        <h2 id="message" class="message">Your tasks...</h2>    
+    </header>
+   </div>
+    <section class="appBody">
+        <!-- created a button which shows modal once clicked to crete a task -->
         <div class="modalBtnDiv">
             <button id="modalBtn" class="modalBtn">Create Task</button>
         </div>
-
-       
+    
         <!-- container created to store the 2 list types, to do, and completed -->
-        <div id="listsContainer" class="listsContainer">
-            <div class="toDoListDiv">
-                <h3>To Do:</h3>
-                <p id="errorMessage" class="errorMessage"></p>
-                <ul id="toDoList" class="toDoList">
-                       
-                </ul>
+        <div id="toDoListDiv" class="toDoListDiv">
+            <h3 id="listName" class="listName">To Do:</h3>
+            <p id="errorMessage" class="errorMessage"></p>
+            <ul id="toDoList" class="toDoList">
+                        
+            </ul>
             </div>
-            <div id="completedDiv" class="completedDiv">
-                <h3>Completed:</h3>
-                <ul id="completedList" class="completedList">
+            <!--  --NEED TO FIX JS TO MAKE COMPLETED TASK MOVE HERE --  
+                
+                <div id="completedDiv" class="completedDiv">
+                    <h3>Completed:</h3>
+                    <ul id="completedList" class="completedList">
 
-                </ul>
-            </div>
-        </div>
-    </main>
-    <!-- <div id="editModalDiv" class="modalDiv">
-        
-            <form id="editModal" class="modal">
-                <button type="submit" id="editCancelBtn" class="cancelBtn">X</button>
-                <p id="editHeading" class="modalheadings">Task:</p>
-                <input type="text" id=" editInput" class="taskInput">
-                <p id="editformMessage" class="formMessage"></p>
-                <p id="editDateHeading" class="modalheadings">Due Date:</p>
-                <input type="datetime-local" id="editDueDate" class="editDueDate"/>
-                <div id="btnDiv" class="btnDiv">
-                    <button type="submit" id="saveBtn" class="saveBtn">
-                        Save Task
-                    </button>
-                </div>
-            </form> -->
-    </div>
+                    </ul>
+                </div> 
+
+            -->
+    </section>
+</main>
+    
 </body>
 </html>

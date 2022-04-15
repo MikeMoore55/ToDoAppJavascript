@@ -7,10 +7,21 @@
 }
 
 body{
-    background-image: url(../media/galaxy-img.jpg);
-    background-position: center;
+    background-color: black;
 }
 
+.main{
+    background-image: url(../media/galaxy-img.jpg);
+    background-position: center;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    padding: 0% 5% 5% 10%;
+}
+
+/* everything in modal */
 .modal{
     position: fixed;
     z-index: 2;
@@ -82,20 +93,35 @@ body{
     border-radius: 5%;
 }
 
-h1{
+/* everything seen on the app */
+.header{
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    border-radius: 10%;
+}
+
+.appName{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3em;
     text-align: center;
 }
 
-h2{
+.message{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
     text-align: center;
 }
 
+.appBody{
+    position: relative;
+    top: 25%;
+}
 .modalBtn{
     position: relative;
     width: 40%;
@@ -121,7 +147,7 @@ h2{
     background-color: black;
 }
 
-h3{
+.listName{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 2em;
@@ -185,16 +211,67 @@ li{
     background-color: black;
 }
 
+/* all media queries */
+
 @media(min-width: 490px){
-    body{
+    .main{
         background-image: url(../media/galaxy-img-med.jpg);
         background-position: center;
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        right: 10%;
+        left: 10%;
+        padding: 0% 2% 2% 10%;
+        box-shadow: rgb(0, 0, 0) 0px 0px 10px 10px;
+    }
+    
+    body{
+        background-color: #9c9ca9;
     }
 }
 
-@media(min-width: 900px){
-    body{
+/* @media(min-width: 490px){
+    .main{
         background-image: url(../media/galaxy-img-med.jpg);
         background-position: center;
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        right: 10%;
+        left: 10%;
+        padding: 0% 2% 2% 10%;
+        box-shadow: rgb(0, 0, 0) 0px 0px 10px 10px;
+    }
+    
+    body{
+        background-color: #9c9ca9;
+    }
+} */
+
+@media(min-width: 1200px){
+    .main{
+        background-image: url(../media/galaxy-img-med.jpg);
+        background-position: center;
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        right: 30%;
+        left: 30%;
+        padding: 0% 2% 2% 10%;
+        box-shadow: rgb(0, 0, 0) 0px 0px 10px 10px; 
+    }
+
+    body{
+        background-color: #9c9ca9;
     }
 }
+
+/*  background-image: url(../media/galaxy-img.jpg);
+    background-position: center;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    padding: 0% 5% 5% 10%; */
