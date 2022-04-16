@@ -8,7 +8,7 @@ e.preventDefault();
 addTask();
 });
 
-//display form when "create task" button is clicked
+
 /* ----- make modal appear and disappear ----- */
 
 const MODAL = document.querySelector("#modal")
@@ -17,18 +17,16 @@ const CANCEL_BTN = document.querySelector("#cancelBtn")
 
 const displayModal = () => {
   MODAL.style.display = "block"
-}
+};
 
 const hideModal = () => {
   MODAL.style.display = "none"
-}
-
-MODAL_BTN.addEventListener('click', displayModal)
-CANCEL_BTN.addEventListener('click', hideModal)
+};
 
 
 /* ----- Get the tasks from localStorage ----- */
 const TASKS = Array.from(JSON.parse(localStorage.getItem("tasks")));
+
 
 /* ----- load tasks from local storage ----- */
 
@@ -45,10 +43,10 @@ function loadTasks() {
       li.innerHTML = 
       ` <input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? 'checked' : ''}>
         <input type="text" value="${task.task}" class="task ${task.completed ? 'completed' : ''}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-        <i id="delBtn" class="fa fa-times" aria-hidden="true" onclick="removeTask(this)"></i>`
+        <i id="delBtn" class="fa fa-times delBtn" aria-hidden="true" onclick="removeTask(this)"></i>`
         list.insertBefore(li, list.children[0]);
   });
-}
+};
 
 /* ----- add taskInput to list ----- */
 
@@ -81,34 +79,15 @@ function addTask() {
     ` <input type="checkbox" onclick="taskComplete(this)" class="check">
       <input type="text" value="${task.value}" class="task" onfocus="getCurrentTask(this)" onblur="editTask(this)">
       <i id="delBtn" class="fa fa-times delBtn" aria-hidden="true" onclick="removeTask(this)"></i>
-    `
+    `;
     list.appendChild(li)
-    document.getElementById("formMessage").innerHTML =""
+    document.getElementById("formMessage").innerHTML ="";
     
     // clears input field
     task.value = "";
-}
 
-document.querySelector("#addBtn").addEventListener("click", addTask)
-
-
-const taskAddedModal = document.querySelector("#taskAddMessage")
-
-const displayTaskAddedModal = () => {
-  taskAddedModal.style.display = "block"
-}
-
-const hideTaskAddedModal = () => {
-  taskAddedModal.style.display = "none"
-}
-
-
-document.querySelector("#addBtn").addEventListener("click", displayTaskAddedModal)
-
-document.querySelector("#taskAddMessage").addEventListener("click", hideTaskAddedModal)
-
-
-
+    console.log(TASKS)
+};
 
 
 /* ----- checks off completed tasks when check box is clicked ----- */
@@ -125,7 +104,7 @@ function taskComplete(event) {
     if (containsClass){
       document.querySelector("#completedList").appendChild(li)
     }
-}
+};
 
 
 /* ----- removes task from list and local storage when x is clicked ----- */
@@ -138,7 +117,7 @@ function removeTask(event) {
     });
     localStorage.setItem("tasks", JSON.stringify(TASKS));
     event.parentElement.remove();
-}
+};
 
 // store current task to track changes
 let currentTask = null;
@@ -146,7 +125,7 @@ let currentTask = null;
 // get current task
 function getCurrentTask(event) {
     currentTask = event.value;
-}
+};
 
 /* ----- edit the task and update local storage ----- */
 function editTask(event) {    
@@ -159,7 +138,7 @@ function editTask(event) {
 
     else
     {
-      document.getElementById("errorMessage").innerHTML = ""
+      document.getElementById("errorMessage").innerHTML = "";
     }
 
     // if task already exist
@@ -174,7 +153,7 @@ function editTask(event) {
       document.getElementById("errorMessage").innerHTML = "";
       }
 
-    });
+    })
     
     // update task
     TASKS.forEach(task => {
@@ -182,11 +161,51 @@ function editTask(event) {
         task.task = event.value;
       }
       
-    });
+    })
 
     // update local storage
     localStorage.setItem("tasks", JSON.stringify(TASKS));
-}
+};
+
+
+
+/* ---- help messages display when task is added or del */
+
+const taskAddedModal = document.querySelector("#taskAddMessage");
+
+const displayTaskAddedModal = () => {
+  taskAddedModal.style.display = "block";
+};
+
+const hideTaskAddedModal = () => {
+  taskAddedModal.style.display = "none";
+};
+
+const taskDeletedModal = document.querySelector("#delTaskMessage");
+
+const displayTaskDeletedModal = () => {
+  taskDeletedModal.style.display = "block";
+};
+
+const hideTaskDeletedModal = () => {
+  taskDeletedModal.style.display = "none";
+};
+
+
+/* ---- event listeners ---- */
+MODAL_BTN.addEventListener('click', displayModal);
+CANCEL_BTN.addEventListener('click', hideModal);
+
+document.querySelector("#addBtn").addEventListener("click", displayTaskAddedModal);
+document.querySelector("#taskAddMessage").addEventListener("click", hideTaskAddedModal);
+
+
+document.querySelector("#addBtn").addEventListener("click", addTask);
+document.querySelector("#addBtn").addEventListener("click", hideModal);
+
+
+document.querySelector("#delBtn").addEventListener("click", displayTaskDeletedModal);
+document.querySelector("#delTaskMessage").addEventListener("click", hideTaskDeletedModal);
 
 
 /*
