@@ -68,9 +68,9 @@ const createTasks = () => {
   task.map((x, y) => {
     return (tasks.innerHTML += `
     <div id=${y}>
-          <span class="fw-bold">${x.text}</span>
-          <span class="small text-secondary">${x.date}</span>
-          <p>${x.description}</p>
+          <p class="taskText">${x.text}</p>
+          <p class="taskText">${x.date}</p>
+          <p class="taskText">${x.description}</p>
   
           <span class="options">
             <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>

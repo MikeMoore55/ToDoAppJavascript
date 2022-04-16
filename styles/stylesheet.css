@@ -1,3 +1,22 @@
+*{box-sizing: border-box;}
+*{scroll-behavior: smooth;}
+
+/* modal styling (overriding bootstrap)*/
+.modalStyle{
+    background-color: #e5e5e5;
+    border: solid 10px #449DD1;
+}
+
+.modal-title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    text-decoration: underline;
+}
+
+.modalText{
+
+}
+
 body {
     font-family: sans-serif;
     margin: 0%;
@@ -15,44 +34,12 @@ body {
     margin: 0%;
     overflow-y: scroll;
 } 
-/*add when screen is biggger
-     border: 10px solid #E36414; 
-     */
-  
+
 .app::-webkit-scrollbar {
     width: 0 !important;
 }
-  
-.addNewBtnContainer {
-    position: fixed;
-    bottom: 1%;
-    left: 75%;
-    right: 5%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #78C0E0;
-    padding: 5px 10px;
-    border-radius: 50%;
-    width: 20%;
-    height: 10%;
-    cursor: pointer;
-    box-shadow: black 4px 4px 0px 0px;
-}
 
-  
-.fa-plus {
-    position: fixed;
-    bottom: 4%;
-    left: 80%;
-    right: 5%;
-    width: 10%;
-    height: 5%;
-    font-size: 2.4em;
-    background-color: #78C0E0;
-    padding: 3px;
-    border-radius: 50%;
-}
-
+/* everything in header */
 .header{
     position: relative;
     z-index: 0;
@@ -67,7 +54,14 @@ body {
 
 .appTitle{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 3em;
+    font-size: 3.5em;
+    color: white;
+    text-align: left;
+}
+
+.subTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
     color: white;
     text-align: left;
 }
@@ -89,25 +83,28 @@ body {
     height: 60%;
     width: 20%;
 }
-
-.subTitle{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2.1em;
-    color: white;
-    text-align: left;
-}
-
+/* everything under header */
 .contentArea{
     position: relative;
     top: 5%;
 }
-  
+
+.contentTitle{
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+
+/* task "list" container */
 .tasks {
     display: grid;
     grid-template-columns: 1fr;
     gap: 14px;
 }
-  
+
+/* the box the task is in */
 .tasks div {
     border: 6px solid #449DD1;
     background-color: #78C0E0;
@@ -115,19 +112,68 @@ body {
     padding: 5px;
     display: grid;
     gap: 4px;
+    margin: 2% 2% 1% 2%;
 }
-  
+
+/* task  */
+.taskText{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    text-transform: capitalize;
+}
+
+/* the buttons in div */
 .tasks div .options {
     justify-self: center;
     display: flex;
     gap: 20px;
 }
-  
+
 .tasks div .options i {
     cursor: pointer;
 }
-  
+
+/* edit button */
+.fa-edit{
+    font-size: 2em;
+}
+
+/* delete button */
+.fa-trash-alt{
+    font-size: 2em;
+}
+
+/* help message on form */
 .msg {
     color: red;
 }
-  
+ 
+/* button to open modal */
+.addNewBtnContainer {
+    position: fixed;
+    bottom: 1%;
+    left: 75%;
+    right: 5%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #78C0E0;
+    padding: 5px 10px;
+    border-radius: 50%;
+    width: 20%;
+    height: 10%;
+    cursor: pointer;
+    box-shadow: black 4px 4px 0px 0px;
+}
+ 
+.fa-plus {
+    position: fixed;
+    bottom: 4%;
+    left: 80%;
+    right: 5%;
+    width: 10%;
+    height: 5%;
+    font-size: 2.4em;
+    background-color: #78C0E0;
+    padding: 3px;
+    border-radius: 50%;
+}
