@@ -16,52 +16,60 @@
 </head>
 
 <body>
-  <section id="app" class="app">
-    <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title" id="exampleModalLabel">Add New Task</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <h5>Task Title</h5>
-            <input type="text" class="form-control" name="" id="textInput">
-            <div id="msg" class="msg"></div>
-            <br>
-            <h5>Due Date</h5>
-            <input type="datetime-local" class="form-control" name="" id="dateInput">
-            <br>
-            <h5>Description</h5>
-            <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" id="add" class="btn btn-primary">Add</button>
-          </div>
-        </div>
-      </div>
-    </form>
-    
-    <div id="header" class="header">
-        <h1 id="appTitle" class="mb-3 appTitle">
-            TODO App
-        </h1>
+    <section id="app" class="app">
 
-        <div id="addNewBtnContainer" class="addNewBtnContainer" data-bs-toggle="modal" data-bs-target="#form">
-        <h3>Add New Task</h3>
-        <i class="fas fa-plus"></i>
+        <div id="header" class="header">
+            <h1 id="appTitle" class="mb-3 appTitle">
+                X-List
+            </h1>
+            <img class="headerPic1" src="./media/x.png" alt="X-list x icon">
+            <img class="headerPic2" src="./media/list.png" alt="X-list list icon">
+            <p id="subTitle" class="subTitle">
+                Your Tasks...
+            </p>
+
         </div>
-    </div>
         <div id="contentArea" class="contentArea">
 
-        <h2 class="text-center my-3">Tasks</h2>
+            <h2 class="text-center my-3">Tasks</h2>
 
-        <div id="tasks" class="tasks">
+            <div id="tasks" class="tasks">
 
+            </div>
         </div>
-    </div>
-  </section>
+
+        <div id="addNewBtnContainer" class="addNewBtnContainer" data-bs-toggle="modal" data-bs-target="#form">
+            <!-- <h3>Add New Task</h3> -->
+            <i class="fas fa-plus plusBtn"></i>
+        </div>
+
+        
+        <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Add New Task</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Task Title</h5>
+                        <input type="text" class="form-control" name="" id="textInput">
+                        <div id="msg" class="msg"></div>
+                        <br>
+                        <h5>Due Date</h5>
+                        <input type="datetime-local" class="form-control" name="" id="dateInput">
+                        <br>
+                        <h5>Description</h5>
+                        <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" id="add" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
 </body>
 
 </html>

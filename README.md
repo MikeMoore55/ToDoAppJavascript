@@ -1,54 +1,37 @@
 # ToDoAppJavascript
  
-------- X-List ------
+welcome to X-LIST   
 
-Welcome to X-List
+X-list is a To Do App, which helps organize your tasks You can setup a task, give it a due date, and give it a helpful description. All tasks can be edited and eventually removed when completed.
 
+---- How to use X-list! ----
 
-this is a simple to do app made with javascript
+--New task--
 
+to create a new task...
+-
+-
+-
+-
 
-you can:
--create tasks
--edit tasks
--delete tasks
--check tasks off
+--Edit task--
 
----- creating a task ----
-to create a task, click the create task button
+to edit a task
+-
+-
+-
+-
 
-this will open a modal which will allow you to create a new task to add to the list
+--Delete a task--
 
----- editing a task ----
-to edit a task, double click on the task you wish to edit
+to delete a task...
+-
+-
+-
+-
 
-this will open a text box which you can change you task
+////upcoming features////
+sort tasks alphabetically
+multi list use
 
-once changed, just click of the task or anywhere on the window, the task will update and save automatically
-
----- delete task ----
-to delete tasks, go to the task you wish to delete, and click the trash/garbage can icon which is located next to each task
-
-this will delete the task from storage and remove it from the list
-
----- check tasks off ----
-to check tasks off, go to the task you completed, and click the empty check box on the left of the task
-
-this will draw a line through the task as well as check the box next to the task
-
-
----- updates coming ----
-
-the ability to move checked tasks to a separate area
-
-the ability to create more than one different list type
-
-the ability to classify a task to make it move to a specific type of list
-
----- busy working on ---- 
-
-adding due date to task
-
-adding a sort button to list
-
-help button
+[important! current version is version 2, version 1 was commit 1 - 26, version 2 is an updated version with much better functionality and UI than version 1, but is still the same project]
