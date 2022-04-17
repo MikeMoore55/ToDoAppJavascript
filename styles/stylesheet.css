@@ -1,8 +1,6 @@
 *{box-sizing: border-box;}
 *{scroll-behavior: smooth;}
 
-/* modal styling (overriding bootstrap)*/
-
 
 body {
     font-family: sans-serif;
@@ -19,6 +17,7 @@ body {
     width: 100%;
     height: 100%;
     margin: 0%;
+    padding: 0% 0% 5% 0%;
     overflow-y: scroll;
 } 
 
@@ -26,7 +25,7 @@ body {
     width: 0 !important;
 }
 
-/* everything in header */
+/* ---- everything in header ---- */
 .header{
     position: relative;
     z-index: 0;
@@ -42,8 +41,8 @@ body {
 }
 
 .app-title{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3.5em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4.5em;
     color: white;
     text-align: left;
 }
@@ -75,7 +74,7 @@ body {
     text-align: left;
 }
 
-/* everything under header */
+/* ---- everything under header ---- */
 .task-list-container{
     position: relative;
     top: 5%;
@@ -106,7 +105,7 @@ body {
     padding: 5px;
     display: grid;
     gap: 4px;
-    margin: 2% 2% 1% 2%;
+    margin: 2% 4% 1% 4%;
     box-shadow: black 7px 7px 0px 0px;
 }
 
@@ -144,7 +143,7 @@ body {
     font-size: 1.3em;
 }
 
-/* modal */
+/* ---- modal ---- */
 .modal-style{
     background-color: #e5e5e5;
     border: solid 10px #449DD1;
@@ -165,6 +164,8 @@ body {
     border: solid 5px #449DD1;
     background-color: #78C0E0;
     font-size: 1.3em;
+    box-shadow: black 5px 5px 0px 0px;
+
 }
 
 .btn{
@@ -172,6 +173,7 @@ body {
     border: solid 5px #449DD1;
     color: black;
     font-size: 1em;
+    box-shadow: black 5px 5px 0px 0px;
 }
  
 /* button to open modal */
@@ -191,7 +193,7 @@ body {
     box-shadow: black 5px 5px 0px 0px;
 }
 
-/* help option */
+/* ---- help option ---- */
 
 .help-Btn{
     position: fixed;
@@ -228,19 +230,20 @@ body {
     text-transform: capitalize;
     margin-top: 5%;
 }
+
+
 /* media queries */
 
 @media(min-width: 490px){
 
     body{
-        padding: 2% 12% 2% 12%;
+        padding: 2% 12% 4% 12%;
         background-color: white;
     }
 
     .app{
         left: 10%;
         right: 10%;
-        border: solid 5px #449DD1;
         border-radius: 3%;
         box-shadow: black 0px 10px 0px 10px;
     }
@@ -265,14 +268,13 @@ body {
 @media(min-width: 1000px){
 
     body{
-        padding: 2% 25% 2% 25%;
+        padding: 3% 25% 2% 25%;
         background-color: white;
     }
 
     .app{
         left: 10%;
         right: 10%;
-        border: solid 5px #449DD1;
         border-radius: 3%;
         box-shadow: black 0px 7px 0px 7px;
     }
@@ -282,12 +284,12 @@ body {
     }
 
     .app-title{
-        font-size: 4em;
+        font-size: 7em;
     }
 
 
     .fa-plus{
-        bottom: 5%;
+        bottom: 7%;
         left: 65%;
         right: 20%;
         height: 10%;
@@ -295,6 +297,8 @@ body {
     }
 
     .help-Btn{
+        bottom: 7%;
+        left: 28%;
         height: 10%;
         width: 7%;
     }
