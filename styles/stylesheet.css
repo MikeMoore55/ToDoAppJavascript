@@ -89,23 +89,6 @@ body {
     text-decoration: underline;
 }
 
-/* 2 images used to create custom icon for background image */
-.custom-img{
-    position: relative;
-}
-.x-lrg-img{
-    position: fixed;
-    z-index: 1;
-    top: 37%;
-    left: 5%;   
-}
-
-.list-lrg-img{
-    position: fixed;
-    z-index: 0;
-    top: 52%;
-    left: 36%;
-}
 
 /* task list container */
 .task-list {
@@ -226,17 +209,6 @@ body {
         box-shadow: black 7px 7px 1px 1px;
     }
 
-
-    .x-lrg-img{
-        top: 39%;
-        left: 28%;   
-    }
-    
-    .list-lrg-img{
-        top: 52%;
-        left: 45%;
-    }
-
     .fa-plus{
         bottom: 4%;
         left: 60%;
@@ -266,15 +238,6 @@ body {
         padding: 2% 5% 2% 5%;
     }
 
-    .x-lrg-img{
-        top: 39%;
-        left: 33%;   
-    }
-    
-    .list-lrg-img{
-        top: 57%;
-        left: 45%;
-    }
 
     .fa-plus{
         bottom: 3%;
