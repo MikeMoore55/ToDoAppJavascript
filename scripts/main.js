@@ -1,15 +1,20 @@
 /* ---- variables ---- */
 
+//modal
 const modal = document.querySelector("#form");
-const taskInput = document.querySelector("#textInput");
-const dateInput = document.querySelector("#dateInput");
-const taskDescription = document.querySelector("#textarea");
-const msg = document.querySelector("#msg");
-const tasks = document.querySelector("#tasks");
+const taskInput = document.querySelector("#text-input");
+const dateInput = document.querySelector("#date-input");
+const taskDescription = document.querySelector("#text-area");
+const taskMsg = document.querySelector("#task-msg");
 const add = document.querySelector("#add");
+
+
+//task list area
+const taskList = document.querySelector("#task-list");
 
 /* ---- event listener ---- */
 
+//error message pop up
 modal.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
@@ -21,10 +26,10 @@ const formValidation = () => {
   // if task input field is blank then...
   if (taskInput.value === "") {
     console.log("failure");
-    msg.innerHTML = "**Task cannot be blank**";
+    taskMsg.innerHTML = "**Task cannot be blank**";
   } else {
     console.log("success");
-    msg.innerHTML = "";
+    taskMsg.innerHTML = "";
     acceptTask();
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
@@ -64,9 +69,9 @@ const acceptTask = () => {
 // creates a task and displays it
 
 const createTasks = () => {
-  tasks.innerHTML = "";
+  taskList.innerHTML = "";
   task.map((x, y) => {
-    return (tasks.innerHTML += `
+    return (taskList.innerHTML += `
     <div id=${y}>
           <p class="taskText">${x.text}</p>
           <p class="taskText">${x.date}</p>
@@ -98,7 +103,7 @@ const deleteTask = (e) => {
 
 //edit tasks
 
-// this creates a new task and saves the new value then deletes the old one
+// this creates a new task and saves the new value then deletes the old task
 const editTask = (e) => {
   let selectedTask = e.parentElement.parentElement;
 
