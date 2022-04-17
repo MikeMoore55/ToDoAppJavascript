@@ -49,6 +49,10 @@
 
             <h2 id="task-list-title" class="task-list-title">Tasks</h2>
 
+            <img id="x-lrg-img" class="x-lrg-img" src="./media/x-blue.png" alt="X-list x icon">
+            <img id="list-lrg-img" class="list-lrg-img" src="./media/list-blue.png" alt="X-list list icon">
+
+
             <div id="task-list" class="task-list">
 
                 <!-- tasks go here -->
@@ -59,9 +63,7 @@
 
         <!-- took inspiration from Anita's to-do app for add button -->
 
-        <div id="new-task-btn-container" class="new-task-btn-container" data-bs-toggle="modal" data-bs-target="#form">
-            <i id="new-task-btn" class="fas fa-plus"></i>
-        </div>
+        <button id="new-task-btn" class="fas fa-plus plus-box" data-bs-toggle="modal" data-bs-target="#form"></button>
 
         <!-- bootstrap modal -->
         <form id="form" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -80,26 +82,26 @@
 
                     <div id="modal-body" class="modal-body">
                         <h5 id="modal-sub-title-name" class="modal-sub-title">
-                            Task Title
+                            Task Title:
                         </h5>
 
-                        <input type="text" id="text-input" class="form-control modalText" name=""> 
+                        <input type="text" id="text-input" class="form-control input-field" name=""> 
                         
                         <p id="task-msg" class="task-msg"></p>
                         
                         <h5 id="modal-sub-title-date" class="modal-sub-title">
-                            Due Date
+                            Due Date:
                         </h5>
                         
-                        <input type="datetime-local" id="date-input" class="form-control" name="" >
+                        <input type="datetime-local" id="date-input" class="form-control input-field" name="" >
                         
                         <p id="date-msg" class="date-msg"></p>
                         
                         <h5 id="modal-sub-title-description" class="modal-sub-title" >
-                            Description
+                            Description:
                         </h5>
                         
-                        <textarea name="" id="text-area" class="form-control"  cols="30" rows="5"></textarea>
+                        <textarea name="" id="text-area" class="form-control input-field"  cols="30" rows="5"></textarea>
                         
                         <p id="description-msg" class="description-msg"></p>
                     </div>
