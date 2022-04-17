@@ -39,3 +39,7 @@ sort tasks alphabetically
 multi list use
 
 [important! current version is version 2.0, version 1.-0 was commit 1 - 26, version 2 is an updated version with much better functionality and UI than version 1, but is still the same project]
+
+-----deployment link-----
+
+https://mikemoore55.github.io/ToDoAppJavascript/
