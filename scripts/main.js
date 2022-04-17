@@ -14,12 +14,6 @@ const add = document.querySelector("#add");
 //task list area
 const taskList = document.querySelector("#task-list");
 
-//help button
-const helpBtn = document.querySelector("#help-btn");
-
-//help modal
-const helpModal = document.querySelector("#help-modal");
-const closeHelp = document.querySelector("#close-help");
 
 /* ---- event listener ---- */
 
@@ -141,15 +135,6 @@ const resetForm = () => {
   dateInput.value = "";
   taskDescription.value = "";
 };
-
-//help modal
-const displayHelp = () => {
-  helpModal.style.display = "block";
-}
-
-const hideHelp = () => {
-  helpModal.style.display = "none";
-}
 
 
 /* ---- local storage ---- */

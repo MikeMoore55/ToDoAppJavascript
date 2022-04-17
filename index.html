@@ -114,29 +114,118 @@
         <!-- help modal -->
         <!-- pls try remove onclick -->
         <div id="help-btn-container" class="help-btn-container">
-            <button type="button" id="help-Btn" class="help-Btn" onclick="displayHelp()">
+            <button type="button" id="help-Btn" class="help-Btn" data-bs-toggle="modal" data-bs-target="#help-modal" >
                 ?
             </button>
         </div>
+        <form id="help-modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            
+            <div id="help-modal-dialog" class="modal-dialog">
+                
+                <div id="help-modal-content" class="modal-content modal-style">
+                   
+                    <div id="help-modal-header" class="modal-header">
+                        <h4 id="help-modal-title" class="modal-title" >
+                           Need Help?
+                        </h4>
+                        
+                        <button type="button" id="close-help-modal-btn" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-        <div id="help-modal" class="help-modal">
-            <div class="modal-dialog modal-dialog-scrollable">
+                    <div id="help-modal-body" class="modal-body">
+                        <h5 class="help-modal-sub-title">
+                            How do i create/add a task?
+                        </h5> 
+
+                        <p class="help-explaination">
+                            1] first, click the  "+"
+                        </p>
+                        <img id="create-a-task-img" class="help-img" src="./media/add a task.png" alt="create/add a task image">
+                        
+                        <p class="help-explaination">
+                            2] once clicked you should see a modal pop up like so...
+                        </p>
+                        <img class="help-img" src="./media/task modal.png">
+                        
+                        <p class="help-explaination">
+                            3] enter you task, you must enter a task name, due date and description are optional
+                        </p>
+                        <img class="help-img" src="./media/entering task info.png">
+                        
+                        <p class="help-explaination">
+                            4] once filled in click the "add" button, if you dont want to add or save a task, click the "x" to exit the modal
+                        </p>
+                        <img class="help-img" src="./media/saving task.png">
+                        
+                        <p class="help-explaination">
+                            5] you task will appear under the "tasks" heading
+                        </p>
+                        <img class="help-img" src="./media/task.png">
+                        
+                        <h5 class="help-modal-sub-title">
+                             How do I edit a task
+                        </h5>
+
+                        <p class="help-explaination">
+                            1] click the edit icon, (the pen on paper)
+                        </p>
+                        <img class="help-img" src="./media/edit task.png">
+
+                        <p class="help-explaination">
+                            2] once clicked you should see a modal pop up like so...
+                        </p>
+                        <img class="help-img" src="./media/task modal.png">
+
+                        <p class="help-explaination">
+                            3] enter you new task, again you must enter a task name, due date and description are optional
+                        </p>
+                        <img class="help-img" src="./media/entering task info.png">
+                        
+                        <p class="help-explaination">
+                            4] once you are satisfied with the new task, click the "add" button, if you don't want to save the task, click the "x" to exit the modal
+                        </p>
+                        <img class="help-img" src="./media/saving task.png">
+                        
+                        <p class="help-explaination">
+                            4] you new task will appear under the "tasks" heading
+                        </p>
+                        <img class="help-img" src="./media/task.png">
+
+                        <h5 class="help-modal-sub-title">
+                            How do I delete a task
+                        </h5>
+
+                        <p class="help-explaination">
+                            1] click the delete button (trash can), once clicked the task will be deleted
+                        </p>
+                        <img class="help-img" src="./media/delete task.png">
+
+                            
+                    </div>
+                    
+                    <div id="help-modal-footer" class="modal-footer">
+                        <button type="submit" id="cancel-help" class="btn btn-primary">
+                            cancel
+                        </button>
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        </form>
+
+
+      <!--   <div id="help-modal" class="modal-dialog">
                 <h4 id="help-title" class="help-title">
                     Need Help?
                 </h4>
 
-                <p>How do i create/add a task?</p>
-                <img id="create-a-task-img" class="help-img" src="./media/add a task.png" alt="create/add a task image">
-                <img class="help-img" src="./media/task modal.png">
-                <img class="help-img" src="./media/entering task info.png">
-                <img class="help-img" src="./media/saving task.png">
-                <img class="help-img" src="./media/task.png">
-                <p>how do i</p>
+                
                 <button type="button" id="close-help" class="close-help" onclick="hideHelp()">
                     close
                 </button>
-            </div>
-        </div>
+        </div> -->
     </section>
 </body>
 
