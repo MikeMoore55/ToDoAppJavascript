@@ -110,8 +110,6 @@ body {
     box-shadow: black 7px 7px 0px 0px;
 }
 
-
-
 /* task  */
 .taskText{
     font-family: Arial, Helvetica, sans-serif;
@@ -141,8 +139,9 @@ body {
 }
 
 /* help message on form */
-.task-msg {
+.msg {
     color: red;
+    font-size: 1.3em;
 }
 
 /* modal */
@@ -192,12 +191,62 @@ body {
     box-shadow: black 5px 5px 0px 0px;
 }
 
+/* help option */
+
+.help-Btn{
+    position: fixed;
+    z-index: 3;
+    bottom: 2%;
+    left: 5%;
+    width: 20%;
+    height: 10%;
+    font-size: 3em;
+    font-weight: 700;
+    background-color: #449DD1;
+    border-radius: 50%;
+    border: none;
+    box-shadow: black 5px 5px 0px 0px;
+}
+
+.help-modal{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    top: 24%;
+    left: 3%;
+    right: 3%;
+    bottom: 5%;
+    width: 94%;
+    background-color: #e5e5e5;
+    border: solid 5px #449DD1;
+    border-radius: 3%;
+}
+
+.help-title{
+    text-align: center;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.help-img{
+    width: 300px;
+    height: 300px;
+}
+
+.close-help{
+    background-color: #449DD1;
+    border: none;
+    margin: 3% 5% 3% 5%;
+}
+
 /* media queries */
 
 @media(min-width: 490px){
 
     body{
-        padding: 0% 12% 0% 12%;
+        padding: 2% 12% 2% 12%;
         background-color: white;
     }
 
@@ -206,13 +255,20 @@ body {
         right: 10%;
         border: solid 5px #449DD1;
         border-radius: 3%;
-        box-shadow: black 7px 7px 1px 1px;
+        box-shadow: black 0px 10px 0px 10px;
     }
 
     .fa-plus{
         bottom: 4%;
-        left: 60%;
+        left: 67%;
         right: 20%;
+        height: 10%;
+        width: 15%;
+    }
+
+    .help-Btn{
+        bottom: 4%;
+        left: 17%;
         height: 10%;
         width: 15%;
     }
@@ -222,7 +278,7 @@ body {
 @media(min-width: 1000px){
 
     body{
-        padding: 0% 25% 0% 25%;
+        padding: 2% 25% 2% 25%;
         background-color: white;
     }
 
@@ -231,18 +287,27 @@ body {
         right: 10%;
         border: solid 5px #449DD1;
         border-radius: 3%;
-        box-shadow: black 7px 7px 1px 1px;
+        box-shadow: black 0px 7px 0px 7px;
     }
 
     .header{
         padding: 2% 5% 2% 5%;
     }
 
+    .app-title{
+        font-size: 4em;
+    }
+
 
     .fa-plus{
-        bottom: 3%;
+        bottom: 5%;
         left: 65%;
         right: 20%;
+        height: 10%;
+        width: 7%;
+    }
+
+    .help-Btn{
         height: 10%;
         width: 7%;
     }

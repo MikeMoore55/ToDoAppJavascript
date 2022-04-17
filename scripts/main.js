@@ -6,11 +6,20 @@ const taskInput = document.querySelector("#text-input");
 const dateInput = document.querySelector("#date-input");
 const taskDescription = document.querySelector("#text-area");
 const taskMsg = document.querySelector("#task-msg");
+const dateMsg = document.querySelector("#date-msg");
+const descriptionMsg = document.querySelector("#description-msg");
 const add = document.querySelector("#add");
 
 
 //task list area
 const taskList = document.querySelector("#task-list");
+
+//help button
+const helpBtn = document.querySelector("#help-btn");
+
+//help modal
+const helpModal = document.querySelector("#help-modal");
+const closeHelp = document.querySelector("#close-help");
 
 /* ---- event listener ---- */
 
@@ -20,16 +29,31 @@ modal.addEventListener("submit", (e) => {
   formValidation();
 });
 
-/* ---- form validation ---- */
+/* ---- functions ---- */
+
+//form validation
+
+//when input fields are black, error messages must pop up
 
 const formValidation = () => {
+
   // if task input field is blank then...
+
   if (taskInput.value === "") {
     console.log("failure");
-    taskMsg.innerHTML = "**Task cannot be blank**";
+
+    //form messages
+    taskMsg.innerHTML = "**Task Field cannot be blank!**";
+    dateMsg.innerHTML = "**Optional!**";
+    descriptionMsg.innerHTML = "**Optional!**";
   } else {
     console.log("success");
+
+    //form messages
     taskMsg.innerHTML = "";
+    dateMsg.innerHTML = "";
+    descriptionMsg.innerHTML = "";
+
     acceptTask();
     add.setAttribute("data-bs-dismiss", "modal");
     add.click();
@@ -44,9 +68,6 @@ const formValidation = () => {
 // task = object within an array
 
 let task = [{}];
-
-/* ---- functions ---- */
-
 
 // set tasks value within the array with certain fields
 
@@ -64,7 +85,6 @@ const acceptTask = () => {
   console.log(task);
   createTasks();
 };
-
 
 // creates a task and displays it
 
@@ -88,7 +108,6 @@ const createTasks = () => {
 
   resetForm();
 };
-
 
 //delete tasks
 
@@ -122,6 +141,15 @@ const resetForm = () => {
   dateInput.value = "";
   taskDescription.value = "";
 };
+
+//help modal
+const displayHelp = () => {
+  helpModal.style.display = "block";
+}
+
+const hideHelp = () => {
+  helpModal.style.display = "none";
+}
 
 
 /* ---- local storage ---- */

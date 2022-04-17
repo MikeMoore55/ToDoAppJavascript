@@ -83,7 +83,7 @@
 
                         <input type="text" id="text-input" class="form-control input-field" name=""> 
                         
-                        <p id="task-msg" class="task-msg"></p>
+                        <p id="task-msg" class="msg"></p>
                         
                         <h5 id="modal-sub-title-date" class="modal-sub-title">
                             Due Date:
@@ -91,7 +91,7 @@
                         
                         <input type="datetime-local" id="date-input" class="form-control input-field" name="" >
                         
-                        <p id="date-msg" class="date-msg"></p>
+                        <p id="date-msg" class="msg"></p>
                         
                         <h5 id="modal-sub-title-description" class="modal-sub-title" >
                             Description:
@@ -99,7 +99,7 @@
                         
                         <textarea name="" id="text-area" class="form-control input-field"  cols="30" rows="5"></textarea>
                         
-                        <p id="description-msg" class="description-msg"></p>
+                        <p id="description-msg" class="msg"></p>
                     </div>
                     
                     <div id="modal-footer" class="modal-footer">
@@ -111,7 +111,32 @@
             </div>
         
         </form>
-    
+        <!-- help modal -->
+        <!-- pls try remove onclick -->
+        <div id="help-btn-container" class="help-btn-container">
+            <button type="button" id="help-Btn" class="help-Btn" onclick="displayHelp()">
+                ?
+            </button>
+        </div>
+
+        <div id="help-modal" class="help-modal">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <h4 id="help-title" class="help-title">
+                    Need Help?
+                </h4>
+
+                <p>How do i create/add a task?</p>
+                <img id="create-a-task-img" class="help-img" src="./media/add a task.png" alt="create/add a task image">
+                <img class="help-img" src="./media/task modal.png">
+                <img class="help-img" src="./media/entering task info.png">
+                <img class="help-img" src="./media/saving task.png">
+                <img class="help-img" src="./media/task.png">
+                <p>how do i</p>
+                <button type="button" id="close-help" class="close-help" onclick="hideHelp()">
+                    close
+                </button>
+            </div>
+        </div>
     </section>
 </body>
 
