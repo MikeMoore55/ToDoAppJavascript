@@ -14,6 +14,8 @@ const add = document.querySelector("#add");
 //task list area
 const taskList = document.querySelector("#task-list");
 
+//pop up messages
+const addedMessage = document.querySelector("#add-message")
 
 /* ---- event listener ---- */
 
@@ -21,12 +23,29 @@ const taskList = document.querySelector("#task-list");
 modal.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
+  displayAddMessage();
 });
+
+
 
 /* ---- functions ---- */
 
-//form validation
+//pop up messages
 
+const displayAddMessage = () => {
+  addedMessage.style.display = "block"
+}
+
+const hideAddMessage =() => {
+  addedMessage.style.display = "none"
+}
+
+addedMessage.addEventListener("click", (e) => {
+  e.preventDefault()
+  hideAddMessage()
+})
+
+//form validation
 //when input fields are black, error messages must pop up
 
 const formValidation = () => {
@@ -87,9 +106,9 @@ const createTasks = () => {
   task.map((x, y) => {
     return (taskList.innerHTML += `
     <div id=${y}>
-          <p class="taskText">${x.text}</p>
-          <p class="taskText">${x.date}</p>
-          <p class="taskText">${x.description}</p>
+          <p class="task-text">${x.text}</p>
+          <p class="task-text">${x.date}</p>
+          <p class="task-text">${x.description}</p>
   
           <span class="options">
             <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>

@@ -25,6 +25,22 @@ body {
     width: 0 !important;
 }
 
+/* pop messages */
+
+.add-message{
+    display: none;
+    position: absolute;
+    top: 2%;
+    left: 10%;
+    right: 10%;
+    z-index: 5;
+    background-color: #78C0E0;
+    border: solid 3px #449DD1;
+    padding: 2% 2% 2% 2%;
+    text-align: center;
+    font-size: 1.4em;
+}
+
 /* ---- everything in header ---- */
 .header{
     position: relative;
@@ -102,7 +118,7 @@ body {
     background-color: #78C0E0;
     z-index: 2;
     border-radius: 6px;
-    padding: 5px;
+    padding: 1% 2% 2% 1%;
     display: grid;
     gap: 4px;
     margin: 2% 4% 1% 4%;
@@ -110,7 +126,7 @@ body {
 }
 
 /* task  */
-.taskText{
+.task-text{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5em;
     text-transform: capitalize;
@@ -222,6 +238,7 @@ body {
     width: 350px;
     height: 370px;
     border: solid #78C0E0 5px;
+    border-radius: 3%;
 }
 
 .help-explaination{
@@ -304,3 +321,77 @@ body {
     }
 
 }
+
+/* @media(max-height: 790px){
+
+    body{
+        padding: 0% 25% 2% 25%;
+        background-color: white;
+    }
+
+    .header{
+        padding: 1% 5% 1% 5%;
+    }
+
+    .app-title{
+        font-size: 3em;
+    }
+
+    .sub-title{
+        font-size: 1.8em;
+    }
+
+    .x-img{
+        right: 18%;
+        top: 16%;
+        height: 35%;
+        width: 10%;
+    }
+    
+    .list-img{
+        right: 8%;
+        top: 28%;
+        height: 55%;
+        width:15%;
+    }
+
+    .task-list-title{
+        font-size: 1.5em;
+    }
+
+    .task-list div{
+        margin: 1% 2% 1% 2%;
+        padding: 0% 2% 2% 0%;
+    }
+
+    .fa-edit{
+        font-size: 1em;
+    }
+
+    .fa-trash-alt{
+        font-size: 1em;
+    }
+
+    .task-text{
+        font-size: 1em;
+    }
+
+
+    .fa-plus{
+        bottom: 6%;
+        left: 65%;
+        right: 20%;
+        height: 14%;
+        width: 9%;
+    }
+
+    .help-Btn{
+        text-align: center;
+        bottom: 6%;
+        left: 26%;
+        height: 14%;
+        width: 9%;
+    }
+
+} */
+
