@@ -27,18 +27,19 @@ body {
 
 /* pop messages */
 
-.add-message{
+.pop-up-message{
     display: none;
     position: absolute;
-    top: 2%;
+    top: 30%;
     left: 10%;
     right: 10%;
     z-index: 5;
-    background-color: #78C0E0;
-    border: solid 3px #449DD1;
-    padding: 2% 2% 2% 2%;
-    text-align: center;
-    font-size: 1.4em;
+    background-color:#e5e5e5 ;
+    border: solid 5px #b7b4b4;
+    border-radius: 7%;
+    padding: 2% 2% 2% 5%;
+    font-size: 1.5em;
+    color: #449DD1;
 }
 
 /* ---- everything in header ---- */
@@ -96,12 +97,29 @@ body {
     top: 5%;
 }
 
+.task-list-header{
+    position: relative;
+}
+
 .task-list-title{
     text-align: center;
+    margin: 1% 2% 2% 5%;
     font-size: 2.5em;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
+}
+
+.sort-btn{
+    position: relative;
+    margin: 1% 5% 1% 4%;
+    border: solid 5px #449DD1;
+    padding: 1% 1% 1% 1%;
+    background-color: #78C0E0;
+    border-radius: 7%;
+    font-size: 1.5em;
+    color: white;
+    box-shadow:  black 5px 5px 0px 0px;
 }
 
 
@@ -132,6 +150,10 @@ body {
     text-transform: capitalize;
 }
 
+.completed{
+    text-decoration: line-through;
+}
+
 /* the buttons in div */
 .task-list div .options {
     justify-self: center;
@@ -157,6 +179,7 @@ body {
 .msg {
     color: red;
     font-size: 1.3em;
+    margin: 3% 2% 1% 2%;
 }
 
 /* ---- modal ---- */
@@ -203,6 +226,7 @@ body {
     width: 20%;
     height: 10%;
     font-size: 3em;
+    color: white;
     background-color: #449DD1;
     border-radius: 50%;
     border: none;
@@ -219,6 +243,7 @@ body {
     width: 20%;
     height: 10%;
     font-size: 3em;
+    color: white;
     font-weight: 700;
     background-color: #449DD1;
     border-radius: 50%;
@@ -265,6 +290,13 @@ body {
         box-shadow: black 0px 10px 0px 10px;
     }
 
+    .pop-up-message{
+        top: 23%;
+        left: 24%;
+        right: 23%;
+        font-size: 2em;
+    }
+
     .fa-plus{
         bottom: 4%;
         left: 67%;
@@ -285,7 +317,7 @@ body {
 @media(min-width: 1000px){
 
     body{
-        padding: 3% 25% 2% 25%;
+        padding: 1% 25% 2% 25%;
         background-color: white;
     }
 
@@ -294,6 +326,14 @@ body {
         right: 10%;
         border-radius: 3%;
         box-shadow: black 0px 7px 0px 7px;
+    }
+
+    .pop-up-message{
+        padding: 1% 5% 1% 1%;
+        top: 35%;
+        left: 35%;
+        right: 35%;
+        font-size: 1.7em;
     }
 
     .header{

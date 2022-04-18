@@ -34,8 +34,20 @@ to delete a task...
 -click the "delete" icon, looks like a trash can
 -once clicked the task will be permanently deleted
 
+---- features ----
+
+--sort list a-z--
+
+you can sort your lists alphabetically (WOW!)
+
+--help--
+
+if you dont know how to use the app theres a help button with a full tutorial on how to use X-List
+
+
 ////upcoming features////
-sort tasks alphabetically
+line through completed tasks
+login page
 multi list use
 
 [important! current version is version 2.0, version 1.-0 was commit 1 - 26, version 2 is an updated version with much better functionality and UI than version 1, but is still the same project]

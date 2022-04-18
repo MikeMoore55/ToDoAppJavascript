@@ -9,12 +9,16 @@
     <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
     <!-- Font-Awesome icon links -->    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
     <!-- my stylesheet link -->
     <link rel="stylesheet" href="./styles/stylesheet.css">
+    
     <!-- my main.js JavaScript script tag -->
     <script src="./scripts/main.js" defer></script>
+    
     <!-- bootstrap script link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -29,9 +33,19 @@
 <body>
     <section id="app" class="app">
 
-        <p id="add-message" class="add-message">
-            task added
-        </p>
+        <!-- pop up messages to let user know that task has been added, deleted or saved (edited) -->
+        <div>
+            <p id="add-message" class="pop-up-message">
+                Task Added! &emsp; &emsp; &emsp; x
+            </p>
+
+            <p id="del-message" class="pop-up-message">
+                Task Deleted! &emsp; &emsp; &emsp; x
+            </p>
+            <p id="edit-message" class="pop-up-message">
+                Task Saved! &emsp; &emsp; &emsp; x
+            </p>
+        </div>
 
         <header id="header" class="header">
             
@@ -52,8 +66,17 @@
 
         <div id="task-list-container" class="task-list-container">
 
-            <h2 id="task-list-title" class="task-list-title">Tasks</h2>
+            <div id="class-list-header" class="class-list-header">
+                <h2 id="task-list-title" class="task-list-title">
+                    Tasks
+                    
+                </h2>
+                <button type="button" id="sort-btn" class="sort-btn">
+                    sort a-z    
+                </button>
+            </div>
             
+
             <div id="task-list" class="task-list">
 
                 <!-- tasks go here -->
@@ -145,27 +168,27 @@
                         <p class="help-explaination">
                             1] first, click the  "+"
                         </p>
-                        <img id="create-a-task-img" class="help-img" src="./media/add a task.png" alt="create/add a task image">
+                        <img id="create-a-task-img" class="help-img" src="./media/add-a-task.png" alt="create/add a task image">
                         
                         <p class="help-explaination">
                             2] once clicked you should see a modal pop up like so...
                         </p>
-                        <img class="help-img" src="./media/task modal.png">
+                        <img class="help-img" src="./media/task-modal.png" alt="modal img">
                         
                         <p class="help-explaination">
                             3] enter you task, you must enter a task name. Due date and description are optional
                         </p>
-                        <img class="help-img" src="./media/entering task info.png">
+                        <img class="help-img" src="./media/entering-task-info.png" alt="adding info to modal img">
                         
                         <p class="help-explaination">
                             4] once filled in click the "add" button, if you dont want to add or save a task, click the "x" to exit the modal
                         </p>
-                        <img class="help-img" src="./media/saving task.png">
+                        <img class="help-img" src="./media/saving-task.png" alt="saving task img">
                         
                         <p class="help-explaination">
                             5] you task will appear under the "tasks" heading
                         </p>
-                        <img class="help-img" src="./media/task.png">
+                        <img class="help-img" src="./media/task.png" alt="task img">
                         
                         <h5 class="help-modal-sub-title">
                              How do I edit a task
@@ -174,27 +197,27 @@
                         <p class="help-explaination">
                             1] click the edit icon, (the pen on paper)
                         </p>
-                        <img class="help-img" src="./media/edit task.png">
+                        <img class="help-img" src="./media/edit-task.png" alt="editing task img">
 
                         <p class="help-explaination">
                             2] once clicked you should see a modal pop up like so...
                         </p>
-                        <img class="help-img" src="./media/task modal.png">
+                        <img class="help-img" src="./media/task-modal.png" alt="modal img">
 
                         <p class="help-explaination">
                             3] enter you new task, again you must enter a task name, due date and description are optional
                         </p>
-                        <img class="help-img" src="./media/entering task info.png">
+                        <img class="help-img" src="./media/entering-task-info.png" alt="entering info to modal img">
                         
                         <p class="help-explaination">
                             4] once you are satisfied with the new task, click the "add" button, if you don't want to save the task, click the "x" to exit the modal
                         </p>
-                        <img class="help-img" src="./media/saving task.png">
+                        <img class="help-img" src="./media/saving-task.png" alt="saving task img">
                         
                         <p class="help-explaination">
                             4] you new task will appear under the "tasks" heading
                         </p>
-                        <img class="help-img" src="./media/task.png">
+                        <img class="help-img" src="./media/task.png" alt="task img">
 
                         <h5 class="help-modal-sub-title">
                             How do I delete a task
@@ -203,7 +226,7 @@
                         <p class="help-explaination">
                             1] click the delete button (trash can), once clicked the task will be deleted
                         </p>
-                        <img class="help-img" src="./media/delete task.png">
+                        <img class="help-img" src="./media/delete-task.png" alt="delete task img">
 
                             
                     </div>

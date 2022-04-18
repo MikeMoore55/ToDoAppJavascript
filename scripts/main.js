@@ -1,4 +1,6 @@
+
 /* ---- variables ---- */
+
 
 //modal
 const modal = document.querySelector("#form");
@@ -10,40 +12,51 @@ const dateMsg = document.querySelector("#date-msg");
 const descriptionMsg = document.querySelector("#description-msg");
 const add = document.querySelector("#add");
 
-
 //task list area
 const taskList = document.querySelector("#task-list");
 
 //pop up messages
 const addedMessage = document.querySelector("#add-message")
+const delMessage = document.querySelector("#del-message")
+const editMessage = document.querySelector("#edit-message")
 
-/* ---- event listener ---- */
-
-//error message pop up
-modal.addEventListener("submit", (e) => {
-  e.preventDefault();
-  formValidation();
-  displayAddMessage();
-});
+//sort btn
+const sortBtn = document.querySelector("#sort-btn")
 
 
 
 /* ---- functions ---- */
 
+
 //pop up messages
 
+//could have used switch statements dont know why i didn't think of it at first
 const displayAddMessage = () => {
-  addedMessage.style.display = "block"
-}
+  addedMessage.style.display = "block";
+};
 
-const hideAddMessage =() => {
-  addedMessage.style.display = "none"
-}
+const hideAddMessage = () => {
+  addedMessage.style.display = "none";
+};
 
-addedMessage.addEventListener("click", (e) => {
-  e.preventDefault()
-  hideAddMessage()
-})
+const displayDelMessage = () => {
+  delMessage.style.display = "block";
+};
+
+const hideDelMessage = () => {
+  delMessage.style.display = "none";
+};
+
+const displayEditMessage = () => {
+  editMessage.style.display = "block";
+};
+
+const hideEditMessage = () => {
+  editMessage.style.display = "none";
+};
+
+
+
 
 //form validation
 //when input fields are black, error messages must pop up
@@ -99,6 +112,7 @@ const acceptTask = () => {
   createTasks();
 };
 
+
 // creates a task and displays it
 
 const createTasks = () => {
@@ -106,9 +120,9 @@ const createTasks = () => {
   task.map((x, y) => {
     return (taskList.innerHTML += `
     <div id=${y}>
-          <p class="task-text">${x.text}</p>
-          <p class="task-text">${x.date}</p>
-          <p class="task-text">${x.description}</p>
+          <p class="task-text taskName">${x.text}</p>
+          <p class="task-text taskDate">${x.date}</p>
+          <p class="task-text taskDes">${x.description}</p>
   
           <span class="options">
             <i onClick= "editTask(this)" data-bs-toggle="modal" data-bs-target="#form" class="fas fa-edit"></i>
@@ -122,6 +136,21 @@ const createTasks = () => {
   resetForm();
 };
 
+
+//check through task when completed
+
+//...not working...
+/* const checkTask = () => {
+  let newTaskName = document.querySelector(".taskName");
+  let newTaskDate = document.querySelector(".taskDate");
+  let newTaskDes = document.querySelector(".taskDes");
+
+  newTaskName.classList.toggle("completed");
+  newTaskDate.classList.toggle("completed");
+  newTaskDes.classList.toggle("completed");
+} */
+
+
 //delete tasks
 
 const deleteTask = (e) => {
@@ -129,14 +158,17 @@ const deleteTask = (e) => {
   task.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("tasks", JSON.stringify(task));
   console.log(task);
+
+  displayDelMessage();
   
 };
 
 
 //edit tasks
 
-// this creates a new task and saves the new value then deletes the old task
 const editTask = (e) => {
+// this creates a new task and saves the new value then deletes the old task
+
   let selectedTask = e.parentElement.parentElement;
 
   taskInput.value = selectedTask.children[0].innerHTML;
@@ -144,6 +176,11 @@ const editTask = (e) => {
   taskDescription.value = selectedTask.children[2].innerHTML;
 
   deleteTask(e);
+
+  //pop up messages
+  hideDelMessage();
+  hideAddMessage();
+  displayEditMessage();
 };
 
 
@@ -156,9 +193,55 @@ const resetForm = () => {
 };
 
 
+//sort task a-z
+
+const sortTask = () => {
+  task.sort((a, b) => a.text.localeCompare(b.text));
+  createTasks();
+};
+
+
+
+/* ---- Event Listeners ---- */
+
+//event listener for sort a-z
+sortBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  sortTask();
+});
+
+// event listeners to cancel pop up messages
+addedMessage.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideAddMessage();
+});
+
+delMessage.addEventListener("click", (e) => {
+  e.preventDefault()
+  hideDelMessage()
+})
+
+editMessage.addEventListener("click", (e) => {
+  e.preventDefault();
+  hideEditMessage();
+});
+
+
+//error message pop up
+modal.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formValidation();
+  displayAddMessage();
+});
+
+
+
 /* ---- local storage ---- */
 (() => {
   task = JSON.parse(localStorage.getItem("tasks")) || []
   console.log(task);
+  
   createTasks();
+  //to load task if list is sorted
+  sortTask();
 })();
